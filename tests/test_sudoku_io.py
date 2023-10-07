@@ -21,7 +21,8 @@ class TestSudokuIO(unittest.TestCase):
 		self.output_path = os.path.join('tests', 'test_data', 'example_out.suk')
 
 	def tearDown(self):
-		os.remove(self.output_path)
+		if os.path.exists(self.output_path):
+			os.remove(self.output_path)
 
 	def test_read_sudoku(self):
 		read_array = read_sudoku(self.input_path)
