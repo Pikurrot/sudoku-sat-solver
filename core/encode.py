@@ -1,6 +1,9 @@
 import numpy as np
 
 def board2cnf(board: np.ndarray) -> list:
+	"""
+	Converts a sudoku board to a list of CNF clauses.
+	"""
 	id_tensor = np.arange(1, 9*9*9+1, dtype=np.int16).reshape((9, 9, 9)) # assign each entry in tensor a unique id in the range [1, 729]
 
 	# for every cell (i,j) with an initial value k, add k as a literal clause
@@ -27,3 +30,12 @@ def board2cnf(board: np.ndarray) -> list:
 
 	return cnf0.tolist() + cnf1.tolist() + cnf2.tolist()
 
+def cnf2dimacs(cnf: list) -> None:
+	"""
+	Converts a list of CNF clauses to a string in DIMACS format.
+	"""
+	n_clauses = len(cnf)
+	n_variables = max([max(clause) for clause in cnf])
+	header = f'p cnf {n_variables} {n_clauses}\n'
+	clauses = '\n'.join([' '.join([str(literal) for literal in clause]) + ' 0' for clause in cnf])
+	return header + clauses

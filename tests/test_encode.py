@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 import os
-from core.encode import board2cnf
+from core.encode import board2cnf, cnf2dimacs
 
 class TestCore(unittest.TestCase):
 	
@@ -34,3 +34,19 @@ class TestCore(unittest.TestCase):
 		self.assertTrue(np.all(np.array([len(clause) for clause in cnf[-9*9*36:]]) == 2))
 		# check no clause is repeated
 		self.assertEqual(len(cnf), len(set([tuple(clause) for clause in cnf])))
+
+	def test_cnf2dimacs(self):
+		cnf = board2cnf(self.sudoku_array)
+		dimacs = cnf2dimacs(cnf)
+		# check header
+		self.assertEqual(dimacs.split('\n')[0], f'p cnf {9*9*9} {len(cnf)}')
+		# check clauses
+		clauses = dimacs.split('\n')[1:]
+		self.assertEqual(len(clauses), len(cnf)) # check number of clauses
+		for clause in clauses:
+			literals = clause.split()
+			self.assertEqual(literals[-1], '0') # check last literal is 0
+			self.assertEqual(len(literals[:-1]), len(set(literals[:-1]))) # check no literal is repeated
+			for literal in literals[:-1]:
+				self.assertTrue(literal.lstrip('-').isdigit()) # check literal is a number
+				self.assertTrue(-9*9*9 <= int(literal) <= 9*9*9) # check literal is in range
