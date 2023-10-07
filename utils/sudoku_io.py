@@ -1,12 +1,17 @@
 import numpy as np
 import os
+from typing import Union, TextIO
 
-def read_sudoku(file_path: str) -> np.ndarray:
+def read_sudoku(file_input: Union[str, TextIO]) -> np.ndarray:
 	"""
 	Parses a sudoku from a file into a NumPy array.
 	"""
-	with open(file_path, 'r') as f:
-		lines = f.readlines()
+	if isinstance(file_input, str):
+		with open(file_input, 'r') as f:
+			lines = f.readlines()
+	else:
+		lines = file_input.readlines()
+	
 	lines = [l.strip() for l in lines]
 	board = np.zeros((9, 9), dtype=np.int16)
 	for i, line in enumerate(lines):
