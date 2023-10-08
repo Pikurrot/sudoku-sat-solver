@@ -30,7 +30,7 @@ def board2cnf(board: np.ndarray) -> list:
 
 	return cnf0.tolist() + cnf1.tolist() + cnf2.tolist()
 
-def cnf2dimacs(cnf: list) -> None:
+def cnf2dimacs(cnf: list) -> str:
 	"""
 	Converts a list of CNF clauses to a string in DIMACS format.
 	"""
