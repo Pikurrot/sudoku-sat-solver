@@ -33,14 +33,14 @@ if %ERRORLEVEL% equ 1 (
 
 :: Run sudoku2.py
 echo Building sudoku board from dimacs\%FileName%.out
-python sudoku2.py < "dimacs\%FileName%.out" > "output\%FileName%.suk"
+python sudoku2.py < "dimacs\%FileName%.out" > "output\sol_%FileName%.suk"
 
 :: Check for errors
 if %ERRORLEVEL% neq 0 (
 	echo An error occurred while running sudoku2.py
 	goto :End
 ) else (
-	echo Sudoku board built successfully and saved in output\%FileName%.suk
+	echo Sudoku board built successfully and saved in output\sol_%FileName%.suk
 )
 
 :End

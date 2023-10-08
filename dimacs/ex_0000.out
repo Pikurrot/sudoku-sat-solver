@@ -9,8 +9,8 @@ c Sun Oct 8 09:51:12 CEST 2023 Linux LAPTOP-7AI9Q2JQ 5.10.102.1-microsoft-standa
 c 
 c --- [ parsing input ] ------------------------------------------------------
 c 
-c reading DIMACS file from 'dimacs/in_0000.cnf'
-c opening file to read 'dimacs/in_0000.cnf'
+c reading DIMACS file from 'dimacs/ex_0000.cnf'
+c opening file to read 'dimacs/ex_0000.cnf'
 c found 'p cnf 729 3189' header
 c parsed 3189 clauses in 0.00 seconds process time
 c 
@@ -39,10 +39,10 @@ c i  0.01  4 11 1  32  495  172 52% 4 1981 442 61%
 c i  0.01  4 11 1  52  595  236 51% 4 1981 441 60%
 c i  0.01  4 11 1  52  626  264 52% 4 1981 440 60%
 c -  0.01  4 11 2  88  900  360 53% 4 1877 440 60%
-c i  0.02  4 11 2  93  979  418 53% 4 1877 439 60%
-c }  0.02  4 11 2  93 1001  436 53% 4 1877 439 60%
-c [  0.02  4  0 2  93 1001  436  0% 0 1877 439 60%
-c O  0.02  4  4 2  93 1002  437 47% 4 1877 439 60%
+c i  0.01  4 11 2  93  979  418 53% 4 1877 439 60%
+c }  0.01  4 11 2  93 1001  436 53% 4 1877 439 60%
+c [  0.01  4  0 2  93 1001  436  0% 0 1877 439 60%
+c O  0.01  4  4 2  93 1002  437 47% 4 1877 439 60%
 c i  0.02  4  5 2  93 1045  445 48% 3 1877 438 60%
 c i  0.02  4  9 2  93 1265  614 52% 4 1877 437 60%
 c i  0.02  4  8 2  93 1334  642 52% 4 1877 436 60%
@@ -58,8 +58,8 @@ c i  0.02  4 10 2  93 1675  853 57% 4 1877 423 58%
 c -  0.02  4 12 3  93 1800  685 60% 4 1778 423 58%
 c i  0.02  4 12 3  93 1821  705 61% 4 1778 422 58%
 c i  0.02  4 13 3  93 1878  757 62% 5 1778 421 58%
-c ]  0.03  4 13 3  93 1986  855 64% 5 1778 421 58%
-c 1  0.03  4 13 3  93 1986  855 64% 5 1778 421 58%
+c ]  0.02  4 13 3  93 1986  855 64% 5 1778 421 58%
+c 1  0.02  4 13 3  93 1986  855 64% 5 1778 421 58%
 c 
 c --- [ result ] -------------------------------------------------------------
 c 
@@ -117,14 +117,14 @@ c
 c process time taken by individual solving procedures
 c (percentage relative to process time for solving)
 c 
-c         0.02   97.40% search
-c         0.01   50.05% stable
-c         0.01   45.58% unstable
-c         0.00   14.32% parse
-c         0.00    0.24% lucky
+c         0.01   95.74% search
+c         0.01   52.02% stable
+c         0.01   42.11% unstable
+c         0.00   23.10% parse
+c         0.00    0.21% lucky
 c         0.00    0.00% simplify
 c   =================================
-c         0.02   73.87% solve
+c         0.02   66.26% solve
 c 
 c last line shows process time for solving
 c (percentage relative to total process time)
@@ -132,8 +132,8 @@ c
 c --- [ statistics ] ---------------------------------------------------------
 c 
 c chronological:               545        27.44 %  of conflicts
-c conflicts:                  1986    103362.13    per second
-c decisions:                  3064    159467.06    per second
+c conflicts:                  1986    128651.94    per second
+c decisions:                  3064    198484.16    per second
 c fixed:                       308        42.25 %  of all variables
 c learned:                    1971        99.24 %  per conflict
 c learned_lits:              21611       100.00 %  learned literals
@@ -141,7 +141,7 @@ c minimized:                     0         0.00 %  learned literals
 c shrunken:                   6858        31.73 %  learned literals
 c minishrunken:                646         2.99 %  learned literals
 c otfs:                         25         1.26 %  of conflict
-c propagations:              50965         2.65 M  per second
+c propagations:              50965         3.30 M  per second
 c reduced:                      51         2.57 %  per conflict
 c rephased:                      1      1986.00    interval
 c restarts:                     93        21.35    interval
@@ -154,8 +154,8 @@ c
 c --- [ resources ] ----------------------------------------------------------
 c 
 c total process time since initialization:         0.03    seconds
-c total real time since initialization:            0.13    seconds
-c maximum resident set size of process:            4.45    MB
+c total real time since initialization:            0.11    seconds
+c maximum resident set size of process:            4.44    MB
 c 
 c --- [ shutting down ] ------------------------------------------------------
 c 
