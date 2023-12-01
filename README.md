@@ -13,6 +13,9 @@ A program that parses a sudoku into CNF clauses encoded in DIMACS format, uses t
 - A C++ compiler (like g++)
 
 ## Usage
+Clone this repo (recursively so that the cadical submodule is also downloaded):
+`git clone --recurse-submodules https://github.com/Pikurrot/sudoku-sat-solver.git`
+
 ### Windows
 1. Run `run_solver.bat`
 2. Enter the name of the sudoku file (eg. `ex_0000`) without extension. Input sudokus must be placed inside `input/` folder.
